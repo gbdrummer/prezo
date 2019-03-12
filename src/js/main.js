@@ -9,6 +9,8 @@ class PrezoController extends NGNX.VIEW.Registry {
         slides: '> author-cycle > *'
       }
     }, cfg))
+
+    this.keySource = 'key' in KeyboardEvent.prototype ? 'key' : ('keyIdentifier' in KeyboardEvent.prototype ? 'keyIdentifier' : 'keyCode')
   }
 
   next () {
@@ -59,6 +61,18 @@ window.Prezo.on({
         previousSelection.element.removeAttribute('fade-out')
         currentSelection.element.setAttribute('fade-in', '')
         setTimeout(() => currentSelection.element.removeAttribute('fade-in'), 1000)
+      }
+    })
+
+    document.addEventListener('keyup', evt => {
+      switch (evt.key) {
+        case 'ArrowRight':
+        case ' ':
+          return this.next()
+
+        case 'ArrowLeft':
+        case 'Backspace':
+          return this.previous()
       }
     })
   }.bind(window.Prezo)
