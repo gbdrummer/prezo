@@ -1,0 +1,17 @@
+{
+  "name": "prezo",
+  "version": "1.0.0",
+  "description": "Author.io Presentation Tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js --prod",
+    "build-dev": "node build.js --dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@chassis/core": "^2.2.8",
+    "productionline-web": "^1.1.8"
+  }
+}

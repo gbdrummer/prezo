@@ -1,0 +1,38 @@
+custom-properties {
+	--red: hsl(11,74%,54%);
+	--green: hsl(89,82%,40%);
+	--blue: #0099FF;
+	--yellow: hsl(55,100%,64%);
+
+	--font-family: -apple-system, BlinkMacSystemFont, 'Avenir Next', Avenir, Helvetica, Arial, sans-serif;
+	--text-color: rgb(68,68,68);
+}
+
+components {
+	author-layout-cell {
+		@state initial {
+			background: var(--grey-n00);
+			box-shadow: 0 0 0 2px black;
+		}
+	}
+
+	anchor {
+		@state initial {
+			color: var(--blue);
+		}
+
+		@state hover {
+			color: color-mod(var(--blue) lightness(50%));
+			text-decoration: underline;
+		}
+
+		@state active {
+			color: color-mod(var(--blue) lightness(44%));
+		}
+
+		@state disabled {
+			color: var(--grey-n04);
+			text-decoration: none;
+		}
+	}
+}

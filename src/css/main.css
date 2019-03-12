@@ -1,0 +1,31 @@
+@chassis init;
+@chassis import animations;
+
+.prezo {
+  width: 100vw;
+  height: 100vh;
+
+  & > author-cycle {
+    width: 100vw;
+    height: 100vh;
+
+    & section {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+
+      &[fade-in] {
+        animation: fadein 1s;
+      }
+
+      &[fade-out] {
+        opacity: 0;
+        animation: fadeout 500ms;
+      }
+    }
+
+    &[transition] {
+
+    }
+  }
+}
